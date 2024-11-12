@@ -16,4 +16,4 @@
 
 ## Teste
 
-O programa cria duas reservas no hotel, uma para o quarto 101 e outra para o quarto 102, registrando-as no sistema. Em seguida, consulta o status do quarto 101, exibindo as informações da reserva no console. Depois, a reserva do quarto 101 é cancelada e o programa tenta consultar o status desse quarto novamente, agora indicando que ele está disponível. Por fim, o sistema exibe uma mensagem de erro caso o número do quarto consultado ou cancelado não esteja registrado, garantindo que o controle das reservas seja preciso.
+O sistema adiciona três tarefas ao gestor de tarefas: uma para "Estudar TypeScript" no "Projeto A", outra para "Desenvolver API" no "Projeto B" e uma terceira para "Testar funcionalidades" também no "Projeto A". Em seguida, atualiza o status da tarefa com ID 1 para "Concluída" e exibe uma confirmação no console. Depois, consulta todas as tarefas do "Projeto A" e imprime as informações no console, exibindo os detalhes de cada tarefa. Caso uma tarefa com o ID especificado não seja encontrada, o sistema exibe uma mensagem de erro.

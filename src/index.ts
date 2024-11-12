@@ -1,25 +1,32 @@
-import Hotel from "./models/hotel";
-import Reserva from "./models/reserva";
+import GestorTarefas from './models/gestorTarefas';
+import Tarefa from './models/tarefa';
+import StatusTarefa from './enums/statusTarefa';
 
 function main() {
-const reserva1 = new Reserva(101, "Alice", new Date("2023-11-01"), new Date("2023-11-05"));
-const reserva2 = new Reserva(102, "Bob", new Date("2023-11-02"), new Date("2023-11-06"));
 
-// Criando instância do Hotel
-const hotel = new Hotel();
 
-// Registrando Reservas
-hotel.registrarReserva(reserva1);
-hotel.registrarReserva(reserva2);
+const gestor = new GestorTarefas();
 
-// Consultando o status de um quarto
-hotel.consultarStatusQuarto(101);
+//instâncias de Tarefa
+const tarefa1 = new Tarefa(1, "Estudar TypeScript", StatusTarefa.Pendente, "Projeto A");
+const tarefa2 = new Tarefa(2, "Desenvolver API", StatusTarefa.EmProgresso, "Projeto B");
+const tarefa3 = new Tarefa(3, "Testar funcionalidades", StatusTarefa.Pendente, "Projeto A");
 
-// Cancelando uma reserva
-hotel.cancelarReserva(101);
+// adiciona tarefas ao sistema
+gestor.adicionarTarefa(tarefa1);
+gestor.adicionarTarefa(tarefa2);
+gestor.adicionarTarefa(tarefa3);
 
-// Verificando novamente o status do quarto após o cancelamento
-hotel.consultarStatusQuarto(101);
+console.log("Tarefas adicionadas com sucesso.");
+
+// atualiza o status de uma das tarefas
+gestor.atualizarStatus(1, StatusTarefa.Concluida);
+gestor.atualizarStatus(2, StatusTarefa.Concluida);
+
+// conslta tarefas do "Projeto A" e exibindo no console
+console.log("Consultando tarefas do Projeto A:");
+gestor.consultarTarefasPorProjeto("Projeto A");
+
 
 }
 
